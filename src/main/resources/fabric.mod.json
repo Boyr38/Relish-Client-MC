@@ -1,0 +1,20 @@
+{
+	"schemaVersion": 1,
+	"id": "relishclient",
+	"version": "${version}",
+	"name": "Relish Client",
+	"description": "Relish Client v2: modular PvP/utility HUD with keystrokes, CPS, FPS, ping, coords, armor and potion status, zoom and a drag-to-move HUD editor.",
+	"authors": ["Boyan"],
+	"license": "MIT",
+	"icon": "assets/relishclient/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["dev.relish.RelishClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
