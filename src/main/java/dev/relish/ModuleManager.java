@@ -1,6 +1,14 @@
 package dev.relish;
 
-import dev.relish.modules.*;
+import dev.relish.modules.Module;
+import dev.relish.modules.FpsModule;
+import dev.relish.modules.CpsModule;
+import dev.relish.modules.PingModule;
+import dev.relish.modules.CoordsModule;
+import dev.relish.modules.KeystrokesModule;
+import dev.relish.modules.ArmorModule;
+import dev.relish.modules.PotionModule;
+import dev.relish.modules.ZoomModule;
 import java.util.ArrayList;
 import java.util.List;
 

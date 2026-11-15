@@ -140,7 +140,7 @@ public class ModuleScreen extends Screen {
 		double my = event.y();
 
 		if (in(mx, my, px + 8, navY(1), SIDEBAR_W - 16, 18)) {
-			this.minecraft.setScreen(new HudEditorScreen(this));
+			this.minecraft.gui.setScreen(new HudEditorScreen(this));
 			return true;
 		}
 		if (in(mx, my, px + 8, navY(2), SIDEBAR_W - 16, 18)) {

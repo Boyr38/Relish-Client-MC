@@ -44,7 +44,7 @@ public class RelishClient implements ClientModInitializer {
 
 	private static void renderHud(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker) {
 		Minecraft mc = Minecraft.getInstance();
-		if (mc.player == null || mc.options.hideGui) return;
+		if (mc.player == null) return;
 		for (Module m : ModuleManager.all()) {
 			if (m.enabled) m.render(graphics, mc);
 		}
@@ -52,7 +52,7 @@ public class RelishClient implements ClientModInitializer {
 
 	private static void tick(Minecraft mc) {
 		while (menuKey.consumeClick()) {
-			mc.setScreen(new ModuleScreen());
+			mc.gui.setScreen(new ModuleScreen());
 		}
 		if (mc.player == null) {
 			savedFov = null;
@@ -66,7 +66,7 @@ public class RelishClient implements ClientModInitializer {
 
 	private static void handleZoom(Minecraft mc) {
 		boolean zoomEnabled = ModuleManager.get(ZoomModule.class).enabled;
-		boolean zooming = zoomEnabled && zoomKey.isDown() && mc.screen == null;
+		boolean zooming = zoomEnabled && zoomKey.isDown() && mc.gui.screen() == null;
 		var fov = mc.options.fov();
 		if (zooming && savedFov == null) {
 			savedFov = fov.get();
